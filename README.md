@@ -1,4 +1,4 @@
-> A batteries-included Django starter project. To learn more try the books [Django for Beginners](https://djangoforbeginners.com), [Django for APIs](https://djangoforapis.com), and [Django for Professionals](https://djangoforprofessionals.com).
+> A batteries-included Django starter project. To learn more visit [LearnDjango.com](https://learndjango.com).
 
 
 ![Homepage](homepage_41.png)
@@ -6,7 +6,7 @@
 
 ## 🚀 Features
 
-- Django 4.2 & Python 3.11
+- Django 5.0 & Python 3.12
 - Install via [Pip](https://pypi.org/project/pip/), [Pipenv](https://pypi.org/project/pipenv/), or [Docker](https://www.docker.com/)
 - User log in/out, sign up, password reset via [django-allauth](https://github.com/pennersr/django-allauth)
 - Static files configured with [Whitenoise](http://whitenoise.evans.io/en/stable/index.html)
@@ -96,7 +96,7 @@ $ docker-compose exec web python manage.py createsuperuser
 - Make the [admin more secure](https://opensource.com/article/18/1/10-tips-making-django-admin-more-secure).
 - `django-allauth` supports [social authentication](https://django-allauth.readthedocs.io/en/latest/providers.html) if you need that.
 
-I cover all of these steps in my three books: [Django for Beginners](https://djangoforbeginners.com), [Django for APIs](https://djangoforapis.com), and [Django for Professionals](https://djangoforprofessionals.com).
+I cover all of these steps in tutorials and premium courses over at [LearnDjango.com](https://learndjango.com).
 
 ----
 
