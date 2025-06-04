@@ -1,14 +1,14 @@
-> A batteries-included Django starter project. To learn more visit [LearnDjango.com](https://learndjango.com).
+# Lithium: A Django-Powered Boilerplate
+Lithium is a batteries-included Django starter project with everything you need to start coding, including user authentication, static files, default styling, debugging, DRY forms, custom error pages, and more.
 
+> This project was formerly known as _DjangoX_ but was renamed to _Lithium_ in November 2024.
 
 ![Homepage](homepage_41.png)
 
-
 ## 🚀 Features
-
-- Django 5.0 & Python 3.12
-- Install via [Pip](https://pypi.org/project/pip/), [Pipenv](https://pypi.org/project/pipenv/), or [Docker](https://www.docker.com/)
-- User log in/out, sign up, password reset via [django-allauth](https://github.com/pennersr/django-allauth)
+- Django 5.1 & Python 3.13
+- Installation via [uv](https://github.com/astral-sh/uv), [Pip](https://pypi.org/project/pip/) or [Docker](https://www.docker.com/)
+- User authentication--log in, sign up, password reset--via [django-allauth](https://github.com/pennersr/django-allauth)
 - Static files configured with [Whitenoise](http://whitenoise.evans.io/en/stable/index.html)
 - Styling with [Bulma CSS](https://bulma.io/)
 - Debugging with [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar)
@@ -18,6 +18,7 @@
 
 ## Table of Contents
 * **[Installation](#installation)**
+  * [uv](#uv)
   * [Pip](#pip)
   * [Pipenv](#pipenv)
   * [Maintenance mode](#maintenance-mode)
@@ -26,8 +27,6 @@
 * [Contributing](#contributing)
 * [Support](#support)
 * [License](#license)
-
-----
 
 ## 📖 Installation
 DjangoBoot can be installed via Pip, Pipenv, or Docker. To start, clone the repo to your local computer and change into the proper directory.
@@ -38,34 +37,31 @@ $ git clone https://github.com/pythonbrad/django-boot.git
 $ cd django-boot
 ```
 
-### Pip
+### uv
+You can use [uv](https://docs.astral.sh/uv/) to create a dedicated virtual environment.
 
 ```
-$ python -m venv .venv
+$ uv sync
+```
 
-# Windows
-$ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-$ .venv\Scripts\Activate.ps1
+Then run `migrate` to configure the initial database. The command `createsuperuser` will create a new superuser account for accessing the admin. Execute the `runserver` command to start up the local server.
 
-# macOS
-$ source .venv/bin/activate
+```
+$ uv run manage.py migrate
+$ uv run manage.py createsuperuser
+$ uv run manage.py runserver
+# Load the site at http://127.0.0.1:8000 or http://127.0.0.1:8000/admin for the admin
+```
 
+### Pip
+To use Pip, create a new virtual environment and then install all packages hosted in `requirements.txt`. Run `migrate` to configure the initial database. and `createsuperuser` to create a new superuser account for accessing the admin. Execute the `runserver` command to start up the local server.
+
+```
 (.venv) $ pip install -r requirements.txt
 (.venv) $ python manage.py migrate
 (.venv) $ python manage.py createsuperuser
 (.venv) $ python manage.py runserver
-# Load the site at http://127.0.0.1:8000
-```
-
-### Pipenv
-
-```
-$ pipenv install
-$ pipenv shell
-(.venv) $ python manage.py migrate
-(.venv) $ python manage.py createsuperuser
-(.venv) $ python manage.py runserver
-# Load the site at http://127.0.0.1:8000
+# Load the site at http://127.0.0.1:8000 or http://127.0.0.1:8000/admin for the admin
 ```
 
 ### Environ
@@ -83,10 +79,10 @@ python ./manage.py maintenance_mode <on|off>
 To build the Docker image, run the container, and execute the standard commands within Docker.
 
 ```
-$ docker-compose up -d --build
-$ docker-compose exec web python manage.py migrate
-$ docker-compose exec web python manage.py createsuperuser
-# Load the site at http://127.0.0.1:8000
+$ docker compose up -d --build
+$ docker compose exec web python manage.py migrate
+$ docker compose exec web python manage.py createsuperuser
+# Load the site at http://127.0.0.1:8000 or http://127.0.0.1:8000/admin for the admin
 ```
 
 ## Next Steps
@@ -97,8 +93,6 @@ $ docker-compose exec web python manage.py createsuperuser
 - `django-allauth` supports [social authentication](https://django-allauth.readthedocs.io/en/latest/providers.html) if you need that.
 
 I cover all of these steps in tutorials and premium courses over at [LearnDjango.com](https://learndjango.com).
-
-----
 
 ## 🤝 Contributing
 
